@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+</body>
+<!--
+
+
+ -->
+
+<script type="text/babel">
+    /*function Btn(props) {*/
+    function Btn({text,big}){
+        console.log(text,big)
+        return <button
+            style={{
+                backgroundColor: "tomato",
+                color: "white",
+                padding: "10px 20px",
+                border: 0,
+                borderRadius: 10,
+                fontSize : big ? 18:16
+            }}
+        >{text}</button>
+    }
+
+
+
+    function App() {
+        return (
+            <div>
+                <Btn text="Save Change" big={true}/>
+                <Btn text="Continue" big={false}/>
+            </div>
+        );
+    }
+
+    const root = document.getElementById("root");
+    ReactDOM.render(<App/>, root);
+</script>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+ <span>Total Clicks : 0</span>
+  <button id="btn">Click Me</button>
+ </body>
+ <script type="text/javascript">
+ /* span, button 태그를 만들고, 가져와서 이벤트 핸들러를 지정하고, 그리고 함수까지 작성하는 vanilla js 코드 작성 */
+	let counter = 0;
+	const button = document.getElementById("btn");
+	const span = document.querySelector("span");
+	function handleClick(){
+		counter = counter + 1;
+		span.innerText = `Total clicks : ${counter}`;
+
+	}
+	button.addEventListener("click",handleClick);
+ </script>
+</html>

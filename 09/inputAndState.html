@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="Generator" content="EditPlus®">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<title>Document</title>
+<script src= "https://unpkg.com/react@17.0.2/umd/react.development.js" ></script>
+<script src= "https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js" ></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js" ></script>
+</head>
+<body>
+<div id="root"></div>
+
+</body>
+<script type="text/babel">
+/*
+*
+* */
+    const root = document.getElementById("root");
+
+    function App(){
+        const [minutes, setMinutes] = React.useState();
+        const onChanged = (event) => {
+            setMinutes(event.target.value);
+        };
+        return (
+            <div>
+                <h1 className="hi">Super Converter</h1>
+                <label  htmlFor="minutes">Minutes</label>
+                <input
+                    value={minutes}
+                    id="minutes"
+                    placeholder="Minutes"
+                    type="number"
+                    onChange={onChanged}/>{/*만약 이 onChange이벤트가 없다면, 지정된 value의 값 또한 update되지 않는다.*/}
+
+                <h4>You want to convert {minutes}</h4>
+                <label htmlFor="hours">Hours</label>
+                <input id="hours" placeholder="Hours" type="number"/>
+            </div>
+        );
+    }
+
+    ReactDOM.render(<App/>, root);
+ </script>
+</html>

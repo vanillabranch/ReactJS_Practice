@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+    <script src= "https://unpkg.com/react@17.0.2/umd/react.production.min.js" ></script>
+  <script src= "https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js" ></script> 
+ </head>
+ <body>
+	<div id="root"></div>
+
+ </body>
+ <script type="text/javascript">
+/* vanilla.html에 있는 vanilla js 코드를 react로 변환
+* 하지만, 이건 배우기 위해 어렵게 한거고 앞으로는 쓸일 없음~
+* */
+		const root = document.getElementById("root");
+
+		const h3 = React.createElement(
+			"h3", 
+			{
+				id:"title",
+				onMouseEnter:()=>console.log("mouse enter"),
+			},
+			"Hello I am a span!"
+		);
+
+		const btn = React.createElement(		
+			"button",
+			{
+				onClick:() => console.log("i m clicked"),
+				style:{
+					backgroundColor:"tomato"
+				},
+                placeHolder : "buttoooon",
+			},
+			"Click Me"
+		);
+
+		const container = React.createElement("div",null,[h3,btn]);
+
+		ReactDOM.render(container, root)
+ </script>
+</html>

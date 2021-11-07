@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="Generator" content="EditPlus®">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<title>Document</title>
+<script src= "https://unpkg.com/react@17.0.2/umd/react.production.min.js" ></script>
+<script src= "https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js" ></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js" ></script>
+</head>
+<body>
+<div id="root"></div>
+
+</body>
+<!--<script type="text/javascript">-->
+<script type="text/babel">
+/* 이번시간은 body에 구현하는 부분의 createElement 를 없앨것.
+이전 index3.html과 비교하면 됨.
+* */
+    const root = document.getElementById("root");
+    // = () =>    이렇게 쓰는건 arrow function 이라고 한다.
+
+    const Title = () => (
+        <h3 id="title"
+            onMouseEnter={()=> console.log("mouse enter")
+            }
+
+        >
+            Hello I'm a title
+        </h3>
+    );
+
+    //위에 arrow function 은 아래와 같다.
+    /*
+    function testFunc(){
+
+        return (
+            <h3 id="title"
+                onMouseEnter={()=> console.log("mouse enter")
+                }
+
+            >
+                Hello I'm a title
+            </h3>
+        );
+    }
+    */
+
+
+    const Button = () =>  (
+        <button
+            style={{
+                backgroundColor:"tomato",
+            }}
+            onClick={
+                ()=> console.log("I'm clicked.")
+            }
+        >
+            Click Me
+        </button>
+    );
+
+
+    /*
+    * 줜나 중요한거!!!!!!!!!!!!!!!!!
+    * = () => (   이 4단계가...
+    * function 변수 () {} 과 같다.
+    * */
+
+    const Container =() => (
+        <div>
+            <Title/> {/*Title 함수에 있는 내용을 붙여넣는것과 같다.*/}
+            <Button/>{/*소문자는 태그, 대문자는 컴포넌트로 인식. 대문자로 적는것이 반드시 중요하다*/}
+        </div>
+    );
+
+    ReactDOM.render(<Container/>, root)
+ </script>
+</html>
